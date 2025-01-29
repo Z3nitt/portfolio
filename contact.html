@@ -7,8 +7,8 @@
     <title>Contacto | Juanlu</title>
     <link rel="icon" href="resources/Logo_Color.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript" src="formScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="formScript.js" defer></script>
 </head>
 <body class="dark-mode">
     <!-- Barra de navegación -->
@@ -60,8 +60,29 @@
 
                 <button type="submit" class="btn">Send message</button>
             </form>
+            <div id="success-modal" class="modal">
+                <div class="modal-content">
+                    <p>Message sent successfully!</p>
+                    <button onclick="closeModal()">OK</button>
+                </div>
+            </div>
         </div>
     </section>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- Imagen del estado -->
+            <img id="modal-image" src="" alt="Estado" class="modal-img">
+  
+            <!-- Mensaje -->
+            <p id="modal-message"></p>
+  
+            <!-- Botón para cerrar -->
+            <button id="close-modal-btn" class="btn-close">Close</button>
+        </div>
+    </div>
+
+  
 
     <!-- Pie de página -->
     <script src="scripts.js"></script>
