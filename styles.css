@@ -10,37 +10,119 @@ body {
     background: url('resources/degradado.png') no-repeat center center fixed;
     background-size: cover; /* Cubre toda la pantalla */
     margin: 0;
-    overflow: hidden; /* Evita el scroll */
+    overflow: auto; /* Evita el scroll */
     color: #333;
     line-height: 1.6;
     padding-top: 60px; /* Evitar que el contenido se esconda detrás del header fijo */
 }
 
-/* Header y Barra de Navegación */
+
+/* Cambiar color de la fuente a blanco en páginas con la clase dark-mode */
+body.dark-mode {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    background-image: none; /* Elimina la imagen de fondo */
+}
+
+/* Asegurarse de que todos los textos (p, h1, h2, etc.) sean blancos en dark-mode */
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode a {
+    color: #fff !important; /* Uso de !important para asegurarse de que no se sobrescriba */
+}
+
+/* Cambiar color de texto a negro en los elementos dentro de los recuadros */
+body.dark-mode .project-info,
+body.dark-mode .project-item h2,
+body.dark-mode .project-item h3,
+body.dark-mode .project-item p,
+body.dark-mode .container h1,
+body.dark-mode .container p 
+{
+    color: #000 !important; /* Establece el color negro para estos elementos */
+}
+
+/* Cambiar color de texto a negro en los elementos dentro de los recuadros */
+body.dark-mode .about-item h2,
+body.dark-mode .about-item p,
+body.dark-mode .about-item ul li,
+body.dark-mode .container h1,
+body.dark-mode .container p {
+    color: #ffffff !important; /* Establece el color negro para estos elementos */
+}
+
+/* Cambiar color de texto a negro para el contenido general dentro de la sección About Me en dark-mode */
+body.dark-mode h1,
+body.dark-mode p {
+    color: #000 !important; /* Establece el color negro para estos elementos */
+}
+
+/* Asegúrate de que los textos dentro de los recuadros sean también de color negro */
+body.dark-mode .about-item h2,
+body.dark-mode .about-item p,
+body.dark-mode .about-item ul li {
+    color: #000 !important;
+}
+
+body.dark-mode .project-item p{
+    color: #0e0e0e !important; /* Establece el color negro para estos elementos */
+}
+
+
+/* También puedes agregar más elementos si es necesario */
+body.dark-mode li {
+    color: #fff !important;
+}
+
+body.no-scroll {
+    overflow: hidden; /* Deshabilitar el scroll en index.html */
+}
+
+/* Header centrado y ajustado al contenido */
 header {
     background-color: #333;
     color: #fff;
-    padding: 5px 0; /* Reducir el padding del header */
+    padding: 10px 20px; /* Reduce el padding para hacer el header más pequeño */
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
+    transition: top 0.3s; /* Transición suave cuando el header se oculta o muestra */
 }
 
+
+.header-container {
+    max-width: 1200px; /* Ajusta el tamaño máximo del contenido del header */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible hasta el max-width */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    display: flex;
+    justify-content: space-between; /* Si tienes logo o elementos al lado izquierdo y derecho */
+    align-items: center;
+}
+
+/* Navegación dentro del header */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centra los elementos de navegación */
+    padding-left: 0;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px; /* Reduce el espacio entre los enlaces */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px; /* Reduce el tamaño de la fuente */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -83,9 +165,11 @@ p {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: url('ruta-de-tu-fondo.jpg') no-repeat center center fixed;
     background-size: cover;
+    margin-top: -90px; /* Ajuste para pegar el banner más al header */
 }
+
+
 
 /* Contenedor del Banner */
 #home .container {
@@ -119,8 +203,10 @@ p {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    
     gap: 20px;
 }
+
 
 .project-item {
     background-color: #fff;
@@ -129,16 +215,27 @@ p {
     width: 30%;
     margin-bottom: 30px;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Asegura que el contenido se alinee arriba */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Asegura que el texto se centre correctamente */
 }
 
 .project-item:hover {
     transform: translateY(-10px);
 }
 
+/* Configuración de la imagen dentro del contenedor */
 .project-item img {
-    width: 100%;
+    width: 100%; /* La imagen ocupará todo el ancho disponible de su contenedor */
+    height: auto; /* Mantiene la relación de aspecto original */
+    max-width: 100%; /* Evita que la imagen se expanda más allá del 100% */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    object-fit: contain; /* Asegura que la imagen se ajuste y se mantenga dentro del contenedor sin distorsionarse */
+    display: block; /* Asegura que la imagen se comporte como un bloque y pueda ser centrada */
+    margin-bottom: 20px; /* Espacio entre la imagen y el contenido debajo */
 }
 
 .project-info {
@@ -273,11 +370,72 @@ footer {
     line-height: 30px; /* Alineación vertical del texto */
 }
 
-/* Cambiar color del copyright a gris claro */
-footer p {
-    color: #f1f1f1;  /* Gris suave */
-    margin: 0; /* Eliminar margen extra */
+/* Footer en modo oscuro */
+body.dark-mode footer {
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: #f1f1f1 !important; /* Gris claro para el texto */
+    text-align: center;
+    padding: 4px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px; /* Tamaño de fuente ajustado */
+    height: 30px;
+    line-height: 30px;
 }
+
+/* Asegúrate que el texto dentro del footer sea siempre gris en modo oscuro */
+body.dark-mode footer p {
+    color: #f1f1f1 !important; /* Aplica el color gris claro al texto dentro del footer */
+}
+
+.badge-container {
+    display: grid; /* Usamos grid para ordenar los badges */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px; /* Espacio entre los badges */
+    justify-items: center; /* Centra los badges en cada celda */
+    margin-top: 20px;
+    align-items: center; /* Alinea todos los items en el mismo eje vertical */
+}
+
+.badge-container a {
+    display: block;
+    text-align: center; /* Centra las imágenes dentro de los enlaces */
+}
+
+.badge-container img {
+    max-width: 120px; /* Tamaño máximo de cada badge */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Bordes redondeados para que se vean más suaves */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Agrega sombra para un efecto más bonito */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.badge-container img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del badge cuando se pasa el mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hacer hover */
+}
+
+
+.badge-projects {
+    display: flex; /* Usamos flexbox para centrar la badge */
+    justify-content: center; /* Centra la badge horizontalmente */
+    align-items: center; /* Centra la badge verticalmente */
+    gap: 40px;
+    margin: 10px 0; /* Espacio entre la descripción y la badge */
+}
+
+.badge-projects img {
+    width: 30%; /* Reducimos el tamaño de la badge al 50% */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición para el hover */
+}
+
+.badge-projects img:hover {
+    transform: scale(1.1); /* Hace que la badge crezca un poco cuando se pasa el ratón */
+    filter: brightness(1.2); /* Da un pequeño brillo adicional al hacer hover */
+}
+
+
 
 
 
