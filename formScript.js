@@ -1,7 +1,14 @@
 // Inicializar EmailJS con tu User ID
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("6oQF5j-kfx8MGiZTL");  // Reemplaza con tu USER ID real
+    if (typeof emailjs === "undefined") {
+        console.error("EmailJS no está cargado. Verifica que el script se haya incluido en el HTML.");
+        return;
+    }
+
+    emailjs.init("TU_USER_ID_AQUÍ"); // Reemplaza con tu User ID de EmailJS
+    console.log("EmailJS cargado correctamente.");
 });
+
 
 // Función para enviar el formulario
 document.getElementById("contact-form").addEventListener("submit", function(event) {
