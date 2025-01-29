@@ -1,4 +1,4 @@
-/* General styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +7,20 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: url('resources/degradado.png') no-repeat center center fixed;
+    background-size: cover; /* Cubre toda la pantalla */
+    margin: 0;
+    overflow: hidden; /* Evita el scroll */
     color: #333;
     line-height: 1.6;
-    padding-top: 60px; /* To avoid content hiding behind the fixed header */
+    padding-top: 60px; /* Evitar que el contenido se esconda detrás del header fijo */
 }
 
+/* Header y Barra de Navegación */
 header {
     background-color: #333;
     color: #fff;
-    padding: 15px 0;
+    padding: 5px 0; /* Reducir el padding del header */
     position: fixed;
     top: 0;
     width: 100%;
@@ -47,48 +51,7 @@ nav ul li a.active {
     padding-bottom: 5px;
 }
 
-/* Main Section (Home page specific styles) */
-#home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Takes full height of the screen */
-    text-align: center;
-}
-
-.main-content {
-    max-width: 800px;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 50px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #ff9800;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #e68900;
-}
-
-/* Section styles */
+/* Sección Principal (Home, About, Projects, Contact) */
 section {
     padding: 60px 20px 40px 20px;
     margin: 0 auto;
@@ -113,7 +76,45 @@ p {
     margin-bottom: 30px;
 }
 
-/* Project section */
+/* Home Page - Banner Section */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: url('ruta-de-tu-fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Contenedor del Banner */
+#home .container {
+    position: relative;
+    width: 90vw;
+    max-width: 1500px;
+    overflow: visible; /* Evita el corte de la imagen */
+}
+
+/* Imagen del Banner */
+.banner-img {
+    width: 100%;
+    max-width: 1500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease-out, filter 0.4s ease-out, box-shadow 0.4s ease-out;
+    position: relative;
+    z-index: 10;
+}
+
+.banner-img:hover {
+    transform: scale(1.1); /* Hace que la imagen crezca más */
+    filter: brightness(1.4) contrast(1.2); /* Aumenta el brillo y contraste */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.8); /* Sombra más intensa */
+}
+
+/* Sección de Proyectos */
 .project-list {
     display: flex;
     justify-content: space-between;
@@ -168,7 +169,51 @@ p {
     background-color: #e68900;
 }
 
-/* Contact section */
+/* Sección Sobre Nosotros */
+.about-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.about-item h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.about-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-item ul li {
+    font-size: 16px;
+    color: #666;
+}
+
+.about-image {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 200px;
+    border-radius: 50%;
+    border: 4px solid #ff9800;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Contacto */
 form {
     background-color: #fff;
     padding: 30px;
@@ -214,60 +259,27 @@ form button:hover {
     background-color: #e68900;
 }
 
-/* About section */
-.about-details {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.about-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 30%;
-    margin-bottom: 30px;
-}
-
-.about-item h2 {
-    font-size: 24px;
-    color: #333;
-}
-
-.about-item ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.about-item ul li {
-    font-size: 16px;
-    color: #666;
-}
-
-.about-image {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.about-image img {
-    width: 200px;
-    border-radius: 50%;
-    border: 4px solid #ff9800;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Footer */
 footer {
     background-color: #333;
-    color: #fff;
+    color: #f1f1f1; /* Gris claro para el texto */
     text-align: center;
-    padding: 20px 0;
+    padding: 4px 0; /* Aumentamos un poco el padding */
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-size: 8px; /* Tamaño de fuente un poco más grande */
+    height: 30px; /* Aumentamos ligeramente la altura */
+    line-height: 30px; /* Alineación vertical del texto */
 }
+
+/* Cambiar color del copyright a gris claro */
+footer p {
+    color: #f1f1f1;  /* Gris suave */
+    margin: 0; /* Eliminar margen extra */
+}
+
+
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -285,5 +297,10 @@ footer {
 
     .container {
         width: 100%;
+    }
+
+    /* Ajustar imagen del banner para pantallas más pequeñas */
+    #home {
+        background-size: cover;
     }
 }
