@@ -504,6 +504,31 @@ body.dark-mode footer p {
 }
 
 
+.cv-badge-container {
+    display: flex;  /* Usamos Flexbox para alinear los elementos */
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    align-items: center;  /* Centra el contenido verticalmente */
+}
+
+.cv-badge-link {
+    display: inline-block;  /* Hace que el enlace ocupe solo el espacio necesario */
+    text-align: center;  /* Asegura que la imagen esté centrada dentro del contenedor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Transición suave para hover */
+}
+
+.cv-badge-img {
+    transform: scale(2.0);  /* Aumenta el tamaño del badge en un 50% */
+    max-width: 150px;  /* Limita el tamaño máximo del badge */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    border-radius: 8px;  /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Agrega una sombra suave */
+}
+
+.cv-badge-link:hover .cv-badge-img {
+    transform: scale(2.2);  /* Aumenta el tamaño al hacer hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  /* Intensifica la sombra en hover */
+}
+
 
 
 
