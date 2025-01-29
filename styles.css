@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* General styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
-    padding-top: 60px; /* Para evitar que el contenido se quede bajo el header fijo */
+    padding-top: 60px; /* To avoid content hiding behind the fixed header */
 }
 
 header {
@@ -47,7 +47,48 @@ nav ul li a.active {
     padding-bottom: 5px;
 }
 
-/* Estilo para las secciones principales */
+/* Main Section (Home page specific styles) */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes full height of the screen */
+    text-align: center;
+}
+
+.main-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e68900;
+}
+
+/* Section styles */
 section {
     padding: 60px 20px 40px 20px;
     margin: 0 auto;
@@ -72,7 +113,7 @@ p {
     margin-bottom: 30px;
 }
 
-/* Estilo para la sección de proyectos */
+/* Project section */
 .project-list {
     display: flex;
     justify-content: space-between;
@@ -127,7 +168,7 @@ p {
     background-color: #e68900;
 }
 
-/* Estilos para la sección de contacto */
+/* Contact section */
 form {
     background-color: #fff;
     padding: 30px;
@@ -173,7 +214,7 @@ form button:hover {
     background-color: #e68900;
 }
 
-/* Estilo para la sección sobre mí */
+/* About section */
 .about-details {
     display: flex;
     justify-content: space-between;
