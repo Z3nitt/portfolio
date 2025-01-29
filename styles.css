@@ -435,7 +435,23 @@ body.dark-mode footer p {
     filter: brightness(1.2); /* Da un pequeño brillo adicional al hacer hover */
 }
 
+.badge-contact {
+    display: flex; /* Usamos flexbox para centrar la badge */
+    justify-content: center; /* Centra la badge horizontalmente */
+    align-items: center; /* Centra la badge verticalmente */
+    gap: 300px;
+    margin: 10px 0; /* Espacio entre la descripción y la badge */
+}
 
+.badge-contact img {
+    width: 200%; /* Reducimos el tamaño de la badge al 50% */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición para el hover */
+}
+
+.badge-contact img:hover {
+    transform: scale(1.1); /* Hace que la badge crezca un poco cuando se pasa el ratón */
+    filter: brightness(1.2); /* Da un pequeño brillo adicional al hacer hover */
+}
 
 
 

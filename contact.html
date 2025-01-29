@@ -24,43 +24,45 @@
     <!-- Sección de Contacto -->
     <section id="contact">
         <div class="container">
-            <h1>Contáctame</h1>
-            <p>Si tienes alguna pregunta, inquietud o simplemente deseas ponerte en contacto conmigo, por favor completa el formulario a continuación o utiliza las opciones de contacto directo.</p>
+            <h1>Contact Me</h1>
+            <p>If you have any questions, concerns or simply wish to contact me, please complete the form below or use the direct contact options.</p>
 
             <div class="contact-methods">
                 <div class="contact-item">
-                    <h2>Correo electrónico</h2>
-                    <p><a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <h2>Teléfono</h2>
-                    <p><a href="tel:+123456789">+123 456 789</a></p>
-                </div>
-                <div class="contact-item">
-                    <h2>Redes sociales</h2>
-                    <p>
-                        <a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a> | 
-                        <a href="https://github.com/tuusuario" target="_blank">GitHub</a>
-                    </p>
+                    <div class="badge-contact">
+                        <a href="mailto:juanluserranoleal@gmail.com" target="_blank">
+                            <img src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white" alt="Gmail logo">
+                        </a>
+                        <a href="https://github.com/Z3nitt" target="_blank">
+                            <img src="https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white" alt="GitHub logo">
+                        </a>
+                        <a href="https://www.linkedin.com/in/juanlu-serrano-leal-b27b59324/" target="_blank">
+                            <img src="https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff" alt="LinkedIn logo">
+                        </a>
+                    </div>
                 </div>
             </div>
+            <br><br><br><br><br>
+            <h1>Contact Form</h1>
+            <br>
+            <form id="contact-form" action="process_form.php" method="POST">
+                
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
 
-            <form id="contact-form" action="#" method="POST">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
 
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required placeholder="Write a message"></textarea>
 
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" required placeholder="Escribe tu mensaje"></textarea>
-
-                <button type="submit" class="btn">Enviar Mensaje</button>
+                <button type="submit" class="btn">Send message</button>
             </form>
         </div>
     </section>
 
     <!-- Pie de página -->
     <script src="scripts.js"></script>
+    <script type="text/javascript" src="formScript.js"></script>
 </body>
 </html>
