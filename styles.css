@@ -508,6 +508,7 @@ body.dark-mode footer p {
     display: flex;  /* Usamos Flexbox para alinear los elementos */
     justify-content: center;  /* Centra el contenido horizontalmente */
     align-items: center;  /* Centra el contenido verticalmente */
+    gap: 300px;
 }
 
 .cv-badge-link {
