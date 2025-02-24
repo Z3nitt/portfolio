@@ -20,3 +20,10 @@ window.addEventListener('scroll', function() {
         header.style.top = '0';
     }
 });
+// Ocultar el .html en la barra de direcciones
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.endsWith(".html")) {
+        let newPath = window.location.pathname.replace(".html", "");
+        window.history.replaceState({}, "", newPath);
+    }
+});
